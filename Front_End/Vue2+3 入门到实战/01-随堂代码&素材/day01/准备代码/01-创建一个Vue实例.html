@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    {{ msg }}
+  </div>
+  <!-- 导包 -->
+  <script src="./vue.js"></script>
+  <script>
+    // 核心四步：
+    // 1. 准备容器
+    // 2. 导包
+    // 3. 创建Vue实例
+    // 4. 指定配置项->渲染数据
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: "hello world"
+      }
+    })
+  </script>
+</body>
+
+</html>

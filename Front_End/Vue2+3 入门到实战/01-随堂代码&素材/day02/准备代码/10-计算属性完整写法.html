@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    姓：<input type="text" v-model="firstName"><br>
+    名：<input type="text" v-model="lastName"><br>
+    <p>姓名：{{ fullName }}</p>
+    <button @click="changeName">修改姓名</button>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        firstName: '关',
+        lastName: '羽'
+      },
+      computed: {
+        // fullName() {
+        //   return this.firstName + this.lastName
+        // }
+        fullName: {
+          get() {
+            return this.firstName + this.lastName
+          },
+          set(value) {
+            firstName = value.slice(0, 1)
+            lastName = value.slice(1)
+          }
+        }
+      },
+      methods: {
+        changeName() {
+          this.fullName = '张飞'
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
